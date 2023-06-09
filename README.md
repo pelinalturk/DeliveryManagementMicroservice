@@ -14,6 +14,7 @@ The system uses a RESTful API to communicate between the server and the client. 
 - Spring Boot
 - MapStruct
 - Lombok
+- JUnit
 - Spring Cloud
 - Gateway
 - Eureka server, Eureka client
