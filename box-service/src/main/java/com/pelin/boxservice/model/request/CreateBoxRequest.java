@@ -3,8 +3,6 @@ package com.pelin.boxservice.model.request;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.pelin.boxservice.model.DeliveryStatus;
-import com.pelin.boxservice.service.deliverystate.DeliveryStatusState;
-import com.pelin.boxservice.service.deliverystate.PendingState;
 
 import java.time.LocalDate;
 
@@ -14,7 +12,7 @@ public class CreateBoxRequest {
     private String recipientId;
     private String senderId;
     @JsonIgnore
-    private DeliveryStatusState deliveryStatus = new PendingState();
+    private DeliveryStatus deliveryStatus = DeliveryStatus.PENDING;
     @JsonIgnore
     private LocalDate createdAt = LocalDate.now();
 
@@ -23,7 +21,7 @@ public class CreateBoxRequest {
     public CreateBoxRequest(int weight, String dimensions, String recipientId, String senderId) {
         this.recipientId = recipientId;
         this.senderId = senderId;
-        this.deliveryStatus = new PendingState();
+        this.deliveryStatus = DeliveryStatus.PENDING;
         this.createdAt=LocalDate.now();
         this.weight = weight;
         this.dimensions = dimensions;
@@ -45,11 +43,11 @@ public class CreateBoxRequest {
         this.dimensions = dimensions;
     }
 
-    public DeliveryStatusState getDeliveryStatus() {
+    public DeliveryStatus getDeliveryStatus() {
         return deliveryStatus;
     }
 
-    public void setDeliveryStatus(DeliveryStatusState deliveryStatus) {
+    public void setDeliveryStatus(DeliveryStatus deliveryStatus) {
         this.deliveryStatus = deliveryStatus;
     }
 

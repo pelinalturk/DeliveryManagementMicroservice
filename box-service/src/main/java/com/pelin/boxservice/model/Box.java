@@ -1,6 +1,5 @@
 package com.pelin.boxservice.model;
 
-import com.pelin.boxservice.service.deliverystate.DeliveryStatusState;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
